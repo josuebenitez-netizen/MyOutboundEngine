@@ -83,3 +83,22 @@ export const DEFAULT_SEQUENCE_CONFIG: SequenceConfig = {
   senderTitle: "",
   companyName: "",
 };
+
+// --- A/B Variant types ---
+
+export interface EmailVariant extends Email {
+  variantLabel: string; // "A" | "B"
+  variantStrategy: string; // e.g. "Short + direct CTA" or "Longer + soft CTA"
+}
+
+export interface StepVariants {
+  original: Email;
+  variants: EmailVariant[];
+  selected: "original" | "A" | "B" | "random";
+}
+
+export interface ProspectVariants {
+  prospectEmail: string;
+  prospectName: string;
+  steps: StepVariants[];
+}
