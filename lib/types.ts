@@ -102,3 +102,22 @@ export interface ProspectVariants {
   prospectName: string;
   steps: StepVariants[];
 }
+
+// --- Synthetic Asset types ---
+
+export interface SyntheticReport {
+  prospectEmail: string;
+  prospectName: string;
+  company: string;
+  industry: string;
+  title: string;
+  reportHtml: string;
+  generatedAt: string;
+}
+
+export interface AssetConfig {
+  budgetPerOpportunity: number;
+  reportThreshold: number; // minimum budget to generate a report
+  companyName: string;
+  companyUrl: string;
+}
