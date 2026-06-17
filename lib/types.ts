@@ -42,3 +42,44 @@ export const REQUIRED_FIELDS = [
   { key: "industry", label: "Industry" },
   { key: "linkedin_url", label: "LinkedIn URL" },
 ] as const;
+
+// --- Sequence types ---
+
+export interface SequenceStep {
+  stepNumber: number;
+  label: string;
+  dayDelay: number;
+  goal: string;
+}
+
+export interface Email {
+  subject: string;
+  previewText: string;
+  body: string;
+  cta: string;
+}
+
+export interface ProspectSequence {
+  prospectEmail: string;
+  prospectName: string;
+  steps: Email[];
+}
+
+export interface SequenceConfig {
+  steps: SequenceStep[];
+  senderName: string;
+  senderTitle: string;
+  companyName: string;
+}
+
+export const DEFAULT_SEQUENCE_CONFIG: SequenceConfig = {
+  steps: [
+    { stepNumber: 1, label: "Cold Open", dayDelay: 0, goal: "Spark curiosity with a relevant hook" },
+    { stepNumber: 2, label: "Value Add", dayDelay: 3, goal: "Share a specific insight or resource" },
+    { stepNumber: 3, label: "Social Proof", dayDelay: 7, goal: "Show evidence from similar companies" },
+    { stepNumber: 4, label: "Breakup", dayDelay: 14, goal: "Final touch — low pressure, leave the door open" },
+  ],
+  senderName: "",
+  senderTitle: "",
+  companyName: "",
+};
