@@ -157,3 +157,40 @@ export interface OptimizationReport {
   retireList: string[];
   generatedAt: string;
 }
+
+// --- Apollo & Budget types ---
+
+export interface ApolloConfig {
+  apiKey: string;
+  filters: ApolloFilters;
+}
+
+export interface ApolloFilters {
+  titles: string[];
+  industries: string[];
+  employeeCountMin: number;
+  employeeCountMax: number;
+  locations: string[];
+  keywords: string[];
+  perPage: number;
+}
+
+export const DEFAULT_APOLLO_FILTERS: ApolloFilters = {
+  titles: [],
+  industries: [],
+  employeeCountMin: 50,
+  employeeCountMax: 10000,
+  locations: [],
+  keywords: [],
+  perPage: 25,
+};
+
+export interface WeeklyPlan {
+  totalProspects: number;
+  standardSequence: number;
+  withReport: number;
+  estimatedCost: number;
+  targetReplies: number;
+  estimatedPositiveRate: number;
+  estimatedMeetings: number;
+}

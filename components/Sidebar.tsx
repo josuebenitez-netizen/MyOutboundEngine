@@ -90,8 +90,8 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="p-4 border-t border-white/10">
         <div className="rounded-lg bg-violet-600/10 border border-violet-500/20 p-3">
-          <p className="text-xs text-violet-300 font-medium">Phase 1 Complete</p>
-          <p className="text-xs text-white/40 mt-0.5">Scaffold & Deploy</p>
+          <p className="text-xs text-violet-300 font-medium">All Phases Complete</p>
+          <p className="text-xs text-white/40 mt-0.5">10 / 10 — Ready to launch</p>
         </div>
       </div>
     </aside>
