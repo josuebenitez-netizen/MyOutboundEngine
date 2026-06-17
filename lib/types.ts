@@ -117,7 +117,43 @@ export interface SyntheticReport {
 
 export interface AssetConfig {
   budgetPerOpportunity: number;
-  reportThreshold: number; // minimum budget to generate a report
+  reportThreshold: number;
   companyName: string;
   companyUrl: string;
+}
+
+// --- Results & Optimization types ---
+
+export interface CampaignResult {
+  email: string;
+  prospectName: string;
+  title: string;
+  company: string;
+  industry: string;
+  step: number;
+  variant: string; // "original" | "A" | "B"
+  subjectLine: string;
+  opened: boolean;
+  replied: boolean;
+  positiveReply: boolean;
+  booked: boolean;
+  bodyWordCount: number;
+  ctaType: string;
+}
+
+export interface OptimizationInsight {
+  category: string;
+  finding: string;
+  action: string;
+  confidence: "high" | "medium" | "low";
+  impact: "high" | "medium" | "low";
+}
+
+export interface OptimizationReport {
+  summary: string;
+  winningPatterns: OptimizationInsight[];
+  losingPatterns: OptimizationInsight[];
+  nextGenRecommendations: string[];
+  retireList: string[];
+  generatedAt: string;
 }
